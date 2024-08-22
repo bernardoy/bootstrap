@@ -1,0 +1,499 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  overflow-x: hidden;
+}
+
+.container {
+  display: flex;
+  width: 140vh;
+  box-sizing: border-box;
+  height: 50vh;
+  overflow: hidden;
+  background: #f4f4f4;
+}
+
+.image-section {
+  flex: 2;
+  position: relative;
+  overflow: hidden;
+  background-color: #2d62ff;
+}
+
+.bank-image {
+  position: relative;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  animation: slideInLeft 1s ease-out;
+}
+
+.form-section {
+  flex: 1;
+  width: 70%;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+}
+
+h1 {
+  font-size: 40px;
+  color: #2d62ff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  margin-bottom: 15px;
+  animation: fadeInText 1s ease-in-out;
+}
+
+.description {
+  font-size: 20px;
+  color: #555;
+  margin-bottom: 15px;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  animation: fadeInText 1s ease-in-out;
+}
+
+.additional-info {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 30px;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+
+.registration-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 420px;
+  gap: 20px;
+}
+
+label {
+  font-size: 15px;
+  color: #333;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+input[type="text"] {
+  border: none;
+  border-bottom: 1px solid #ddd;
+  border-radius: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+  transition: border-bottom-color 0.3s, box-shadow 0.3s;
+  width: 100%;
+}
+
+input[type="text"]::placeholder {
+  color: #999;
+  font-style: italic;
+}
+
+input[type="text"]:focus {
+  border-bottom-color: #2d62ff;
+  box-shadow: none;
+  outline: none;
+}
+
+.terms {
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  color: #333;
+  gap: 12px;
+  margin-top: 10px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+
+.checkbox-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-wrapper input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+}
+
+.checkbox-wrapper input[type="checkbox"] + .custom-checkbox {
+  width: 24px;
+  height: 24px;
+  background-color: #fff;
+  border: 2px solid #2d62ff;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.checkbox-wrapper input[type="checkbox"]:checked + .custom-checkbox {
+  background-color: #2d62ff;
+  border-color: #2d62ff;
+}
+
+.checkbox-wrapper input[type="checkbox"]:checked + .custom-checkbox::after {
+  content: "✓";
+  color: #fff;
+  font-size: 16px;
+}
+
+.terms label {
+  margin-left: 32px;
+}
+
+.submit-btn {
+  background-color: #2d62ff;
+  color: white;
+  font-size: 16px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  transition: background-color 0.3s, transform 0.2s;
+  margin: 10px;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.submit-btn:hover {
+  background-color: #2d62ff;
+  transform: scale(1.05);
+}
+
+.submit-btn:active {
+  transform: scale(0.95);
+}
+
+.info-section {
+  width: 100%;
+  padding: 80px 20px;
+  background: #f4f4f4;
+  color: #333;
+  border-top: 1px solid #ddd;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin-top: 0;
+  overflow: hidden;
+}
+
+.info-section h2 {
+  font-size: 36px;
+  color: #2d62ff;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.nubank-card-image {
+  width: 100%;
+  max-width: 700px;
+  height: auto;
+  margin: 0 auto 20px;
+  display: block;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.info-text {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.info-text h3 {
+  font-size: 28px;
+  color: #2d62ff;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.info-text p {
+  font-size: 18px;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.learn-more-btn,
+.open-account-btn {
+  background-color: #2d62ff;
+  color: white;
+  font-size: 16px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  transition: background-color 0.3s, transform 0.2s;
+  margin: 10px;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.learn-more-btn:hover,
+.open-account-btn:hover {
+  background-color: #2d62ff;
+  transform: scale(1.05);
+}
+
+.learn-more-btn:active,
+.open-account-btn:active {
+  transform: scale(0.95);
+}
+
+.info-section,
+.new-section {
+  width: 100%;
+  padding: 40px 20px;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-top: 1px solid #ddd;
+  margin-top: 0;
+  gap: 20px;
+}
+
+.info-section img,
+.new-section img {
+  width: 45%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cartao {
+  margin-left: 190px;
+}
+
+.info-section img {
+  max-width: 500px;
+}
+
+.new-section img {
+  max-width: 500px;
+}
+
+.text-container {
+  max-width: 50%;
+}
+
+#titulo-h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.info-text {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.info-text h3 {
+  font-size: 28px;
+  color: #2d62ff;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.info-text p {
+  font-size: 18px;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.info-section h2,
+.new-section h2 {
+  font-size: 36px;
+  color: #2d62ff;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.info-section .info-text,
+.new-section .info-text {
+  margin-bottom: 20px;
+}
+
+.info-section .info-text h3,
+.new-section .info-text h3 {
+  font-size: 28px;
+  color: #2d62ff;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.info-section .info-text p,
+.new-section .info-text p {
+  font-size: 18px;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.new-section {
+  background: white;
+}
+
+.blue-section {
+  width: 100%;
+  padding: 60px 20px;
+  background: #131c44;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.blue-section .content {
+  max-width: 800px;
+}
+
+.blue-section h2 {
+  font-size: 36px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  margin-bottom: 20px;
+  animation: fadeIn 2s ease-out;
+}
+
+.blue-section p {
+  font-size: 24px;
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 30px;
+  animation: fadeIn 2s ease-out 0.5s;
+}
+
+.blue-section .open-account-btn {
+  background-color: #2d62ff;
+  color: white;
+  font-size: 16px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  transition: background-color 0.3s, transform 0.2s;
+  display: inline-block;
+  text-decoration: none;
+  animation: fadeIn 2s ease-out 1s;
+}
+
+.blue-section .open-account-btn:hover {
+  background-color: #0091ea;
+  transform: scale(1.05);
+}
+
+.blue-section .open-account-btn:active {
+  transform: scale(0.95);
+}
+
+
+.interactive-link {
+  display: inline-block;
+  color: #2d62ff; 
+  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  text-decoration: none; 
+  padding: 12px 24px;
+  border-radius: 5px;
+  transition: color 0.3s, background-color 0.3s, transform 0.2s;
+  cursor: pointer; 
+}
+
+
+.interactive-link:hover {
+  color: #2d62ff; 
+  background-color: rgba(0, 145, 234, 0.1); 
+  transform: scale(1.05); 
+}
+
+
+.interactive-link:active {
+  transform: scale(0.95); 
+}
+
+
+.interactive-link:focus {
+  outline: 2px solid #2d62ff; 
+  outline-offset: 4px;
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInText {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Informação</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="image-section">
+            <img class="bank-image" src="fundo.png" alt="Banco SunBank">
+        </div>
+        <div class="form-section">
+            <h1>SunBank</h1>
+            <p class="description">Crie sua conta PJ com facilidade.</p>
+            <p class="additional-info">Agora é mais fácil gerenciar a sua empresa.</p>
+            <form class="registration-form">
+                <input type="text" id="cnpj" name="cnpj" placeholder="CNPJ" maxlength="14">
+                <label for="cnpj">Digite o CNPJ da empresa</label>
+                <div class="terms">
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="terms" name="terms">
+                        <div class="custom-checkbox"></div>
+                    </div>
+                    <label for="terms">Eu concordo com os <a href="#">Termos de Serviço</a> e <a href="#">Termos de Privacidade</a></label>
+                </div>
+                <button class="submit-btn" type="submit">Abrir Conta PJ</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="info-section">
+        <img class="nubank-card-image" src="homem-cartao.png" alt="Cartão Nubank">
+        <div class="text-container">
+            <h2>Gente tem soluções pra deixar seu dia a dia mais fácil</h2>
+            <div class="info-text">
+                <h3>Controle suas compras, físicas ou online</h3>
+                <p>O cartão de crédito PJ é seu novo cartão de visita. Seja para gastos do dia a dia, assinaturas ou para repor o estoque, o cartão de crédito PJ gratuito e sem anuidade te ajuda a parcelar e organizar as compras do seu negócio. Com ele, você pode pagar boletos e fazer Pix no crédito, além de ter a função débito e ser internacional. Controle tudo que acontece com seu cartão direto do app. Você também pode personalizar seu cartão com o nome da sua empresa e apresentar seu negócio pra todo mundo!</p>
+                <a href="#" class="interactive-link">Saiba mais sobre o cartão PJ</a>
+                <a href="#" class="open-account-btn">Abrir conta PJ</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="blue-section">
+        <div class="content">
+            <h2>Por não termos tarifas, as pessoas que têm conta PJ no SunBank já economizaram</h2>
+            <p id="money-saved">R$29.124.588,422</p>
+            <p>É dinheiro no bolso pra investir no crescimento dos seus negócios</p>
+            <a href="#" class="open-account-btn">Abrir conta PJ</a>
+        </div>
+    </div>
+
+    <div class="new-section">
+        <img class="cartao" src="Untitled.png" alt="Serviços SunBank">
+        <div class="text-container">
+            <h2 id="titulo-h2">Explore nossos serviços</h2>
+            <div class="info-text">
+                <h3>O que mais você pode fazer com sua conta PJ</h3>
+                <p>Além de facilitar o gerenciamento das finanças da sua empresa, a conta PJ oferece diversas funcionalidades para otimizar o seu tempo e recursos. Conheça mais sobre nossos serviços e como eles podem beneficiar seu negócio.</p>
+                <a href="#" class="interactive-link">Saiba mais sobre nossos serviços</a>
+                <a href="#" class="open-account-btn">Abrir conta PJ</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+    function formatNumber(num) {
+        return num.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    }
+
+    function updateMoneySaved() {
+        const startValue = 2000000000;
+        const endValue = 2912458842;
+        const duration = 10000;
+        const element = document.getElementById('money-saved');
+        let startTime;
+
+        function animate(timestamp) {
+            if (!startTime) startTime = timestamp;
+            const progress = timestamp - startTime;
+            const value = Math.min(startValue + (endValue - startValue) * (progress / duration), endValue);
+            element.textContent = formatNumber(value / 100);
+            if (progress < duration) {
+                requestAnimationFrame(animate);
+            }
+        }
+
+        requestAnimationFrame(animate);
+    }
+
+    document.addEventListener('DOMContentLoaded', updateMoneySaved);
+</script>
